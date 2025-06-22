@@ -1,0 +1,43 @@
+/* src/components/MovieList.css */
+
+.movie-grid {
+    display: grid;
+    /* 화면 크기에 따라 200px 크기의 카드를 가능한 많이 채웁니다. */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px; /* 카드 사이의 간격 */
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.movie-card {
+    background-color: #282c34; /* 어두운 카드 배경 */
+    border-radius: 8px;
+    overflow: hidden; /* 이미지가 카드를 삐져나가지 않도록 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    cursor: pointer;
+    text-align: center;
+}
+
+.movie-card:hover {
+    transform: scale(1.05); /* 마우스를 올리면 살짝 커지는 효과 */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.movie-poster {
+    width: 100%;
+    height: 300px; /* 포스터 이미지 높이 고정 */
+    object-fit: cover; /* 이미지가 잘리지 않고 꽉 차도록 */
+}
+
+.movie-title {
+    font-size: 1rem;
+    padding: 15px 10px;
+    margin: 0;
+    color: white;
+    white-space: nowrap; /* 제목이 길어도 한 줄로 표시 */
+    overflow: hidden;
+    text-overflow: ellipsis; /* ...으로 생략 */
+}

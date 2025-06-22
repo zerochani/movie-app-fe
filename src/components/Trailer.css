@@ -1,0 +1,33 @@
+/* src/components/Trailer.css */
+.react-player-container {
+    position: relative;
+    padding-top: 56.25%; /* 16:9 비율 */
+    background-color: #000;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.react-player-container .react-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Trailer.jsx의 ReactPlayer 컴포넌트 내부 iframe에 대한 스타일 */
+.react-player-container .react-player iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.no-trailer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ccc;
+    font-size: 1.2rem;
+}
