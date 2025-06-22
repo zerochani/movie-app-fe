@@ -14,9 +14,18 @@ const MovieList = () => {
             try {
                 setLoading(true);
                 const data = await fetchAllMovies();
-                setMovies(data);
+
+                if (Array.isArray(data)) {
+                    // 배열이 맞으면, 상태를 업데이트합니다.
+                    setMovies(data);
+                } else {
+                    // 배열이 아니라면, 예기치 않은 데이터로 간주하고 에러 처리를 합니다.
+                    console.error("API 응답이 배열 형태가 아닙니다:", data);
+                    setError('영화 목록을 가져오는 데 실패했습니다.');
+                }
             } catch (err) {
                 setError('영화 목록을 가져올 수 없습니다. API 서버가 켜져있는지 확인해주세요.');
+                console.error(err);
             } finally {
                 setLoading(false);
             }
